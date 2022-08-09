@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Weather APP</title> 
+    <link rel="stylesheet" type = "text/css" href="./static/stylesheet.css">
+</head>
+
+<body>
+
+<ul id = weather ></ul>
+
+<form id = form>
+    <input id = "city" placeholder = "Enter a city">
+    <button> Search for city </button>
+</form>
+
+<script src = "socket.io/socket.io.js"></script>
+
+<script>
+
+    var socket = io();
+
+    var form = document.getElementById("form");
+    var city = document.getElementById("city");
+    var weather = document.getElementById("weather");
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        if (city.value){
+        socket.emit("new city", city.value);
+        city.value = "";
+        }
+    });
+
+    socket.on("incoming", msg => {
+        var li = document.createElement("li");
+        li.textContent = msg;
+        weather.appendChild(li);
+    });
+    
+</script>
+</body>
+</html>
+<!-- Path: index.html -->

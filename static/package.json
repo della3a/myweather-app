@@ -1,0 +1,24 @@
+{
+  "name": "myweather-app",
+  "version": "1.0.0",
+  "description": "install : npm i express socketio",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/della3a/myweather-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/della3a/myweather-app/issues"
+  },
+  "homepage": "https://github.com/della3a/myweather-app#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "socketio": "^1.0.0"
+  }
+}
