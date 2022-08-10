@@ -5,6 +5,8 @@ const port = 3000;
 const server = require("http").createServer(app);
 const io = require('socket.io')(server);
 
+app.use("/static", express.static('./static/'));
+
 app.get('/', function (req, res){
     res.sendFile(
         path.join(__dirname, 'index.html'));

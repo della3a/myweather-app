@@ -4,44 +4,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Weather APP</title> 
-    <link rel="stylesheet" type = "text/css" href="./static/stylesheet.css">
+    <link rel="stylesheet" type = "text/css" href="./static/style.css">
 </head>
-
 <body>
-
-<ul id = weather ></ul>
-
-<form id = form>
-    <input id = "city" placeholder = "Enter a city">
-    <button> Search for city </button>
-</form>
-
-<script src = "socket.io/socket.io.js"></script>
-
-<script>
-
+    <!-- <ul id = weatherbox ></ul> -->
+    <div class="weather">
+        <form id = "form">
+            <input type = "text" class = "input" id = "input" placeholder = "Enter a city">
+            <button> Search for city </button>
+        </form>
+        <h2 class = "city"> Weather in Paris</h2>
+        <h3 class="time"> 2022-08-07 22:30 </h3>
+        <h1 class="temp"> 51 °C</h1>
+        <div class="clouds">Clouds: 75%</div>
+        <div class="humidity">Humidity: 60%</div>
+        <div class="wind">Wind Speed: 6.2 kph </div>
+    </div>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="static/app.js" defer ></script>
+    <script>
     var socket = io();
 
     var form = document.getElementById("form");
-    var city = document.getElementById("city");
-    var weather = document.getElementById("weather");
-
+    var input = document.getElementById("input");
+    var weatherbox = document.getElementById("weatherbox");
+    
     form.addEventListener("submit", function(e) {
         e.preventDefault();
 
-        if (city.value){
-        socket.emit("new city", city.value);
-        city.value = "";
+        if (input.value){
+            socket.emit("new city", input.value);
+            city.value = "";
         }
     });
-
     socket.on("incoming", msg => {
         var li = document.createElement("li");
         li.textContent = msg;
-        weather.appendChild(li);
-    });
-    
-</script>
-</body>
+        weatherbox.appendChild(li);
+        });
+        </script>
+ </body>
 </html>
-<!-- Path: index.html -->
