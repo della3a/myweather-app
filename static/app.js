@@ -1,12 +1,13 @@
-const options = {
+ import cities from ".//cities.json" assert {type: 'json'};
+
+
+ const options = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Key': '421ee44f7cmsh4cdbcb5aecb032ep198612jsnff7eda551739',
 		'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
 	}
 };
-
-	
 
 let weather ={
 
@@ -30,18 +31,21 @@ let weather ={
 		console.log(`${name} ${localtime} ${temp_c} ${humidity} ${wind_kph}`);
 
 		document.querySelector('.city').innerText = "Weather in " + name;
-		document.querySelector('.temp').innerText = "Temperature: " + temp_c + "°C";
+    document.querySelector('.time').innerText = localtime;
+		document.querySelector('.temp').innerText = temp_c + "°C";
 		document.querySelector('.clouds').innerText = "Clouds: " + clouds + "%";
 		document.querySelector('.humidity').innerText = "Humidity: " + humidity + "%";
 		document.querySelector('.wind').innerText = "Wind: " + wind_kph + "kph";
 	},
-
-  search : function (){
-    this.fetchWeather(document.querySelector(".input").value);
-  }
 };
 
-setInterval(weather.fetchWeather("paris"), 3000);
-setInterval(weather.fetchWeather("Algiers"), 3000);
+
+setInterval(() => {
+  let city = cities[Math.floor(Math.random() * cities.length)];
+  let temp = document.querySelector('.temp');  
+}, 3000);
+
+
+
 
 

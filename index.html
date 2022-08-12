@@ -9,20 +9,22 @@
 <body>
     <!-- <ul id = weatherbox ></ul> -->
     <div class="weather">
-        <form id = "form">
+        <!--  <form id = "form">
             <input type = "text" class = "input" id = "input" placeholder = "Enter a city">
             <button> Search for city </button>
-        </form>
-        <h2 class = "city"> Weather in Paris</h2>
-        <h3 class="time"> 2022-08-07 22:30 </h3>
-        <h1 class="temp"> 51 °C</h1>
-        <div class="clouds">Clouds: 75%</div>
-        <div class="humidity">Humidity: 60%</div>
-        <div class="wind">Wind Speed: 6.2 kph </div>
+        </form> 
+        -->
+        <h2 class = "city"> Weather in </h2>
+        <h4 class="time"> Time </h4>
+        <h1 class="temp"> °C</h1>
+        <div class="clouds">Clouds: %</div>
+        <div class="humidity">Humidity: %</div>
+        <div class="wind">Wind Speed: kph </div>
     </div>
     <script src="socket.io/socket.io.js"></script>
-    <script src="static/app.js" defer ></script>
-    <script>
+    <script type="module" src="static/app.js" defer ></script>
+
+    <!-- <script>
     var socket = io();
 
     var form = document.getElementById("form");
@@ -37,11 +39,13 @@
             city.value = "";
         }
     });
+
     socket.on("incoming", msg => {
         var li = document.createElement("li");
         li.textContent = msg;
         weatherbox.appendChild(li);
         });
         </script>
+        -->
  </body>
 </html>
