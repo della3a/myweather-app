@@ -7,7 +7,7 @@ npm i express socketio
 
 ```
 
-## How to run the app
+## How to run the app :
 
 open the terminal on folder myweather-app and run
 

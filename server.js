@@ -12,6 +12,7 @@ app.get('/', function (req, res){
         path.join(__dirname, 'index.html'));
 });
 
+// I used this part for client - server part of the test
 io.on("connection", (socket) => {
     console.log('a user connected');
     socket.on("disconnect", () => {

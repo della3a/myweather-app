@@ -10,12 +10,17 @@
 };
 
 let weather ={
+
+	// function that fetch weather data from API
+
 	fetchWeather : function(city){
 		fetch('https://weatherapi-com.p.rapidapi.com/current.json?q='+city, options)
 		.then(response => response.json())
 		.then(data => this.displayWeather(data))
 		.catch(err => console.error(err));
 	},
+
+	// function that display weather data on the page
 
 	displayWeather : function(data){
 		const { name, country, localtime } = data.location;
@@ -24,14 +29,16 @@ let weather ={
 		console.log(`${name} ${country} ${localtime} ${temp_c} ${cloud} ${humidity} ${wind_kph}`);
 
 		document.querySelector('.city').innerText = "Weather in " + name;
-    document.querySelector('.country').innerText = country;
-    document.querySelector('.time').innerText = localtime;
+		document.querySelector('.country').innerText = country;
+		document.querySelector('.time').innerText = localtime;
 		document.querySelector('.temp').innerText = temp_c + "°C";
 		document.querySelector('.cloud').innerText = "Clouds: " + cloud + "%";
 		document.querySelector('.humidity').innerText = "Humidity: " + humidity + "%";
 		document.querySelector('.wind').innerText = "Wind: " + wind_kph + "kph";
 	},
 };
+
+// animation for the weather box fading in
 
 function fade(element) {
     var op = 0.1;  // initial opacity
