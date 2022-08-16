@@ -49,9 +49,9 @@ function fade(element) {
 
 
 setInterval(() => {
+	fade(document.querySelector('.weather'));
 	let city = cities[Math.floor(Math.random() * cities.length)];
 	weather.fetchWeather(city.name);
-	fade(document.querySelector('.weather'));
 }, 3000);
 
 
