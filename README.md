@@ -14,3 +14,5 @@ open the terminal on folder myweather-app and run
 ```bash
 node server.js
 ```
+
+Open the browser on http://localhost:3000
