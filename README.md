@@ -1,4 +1,5 @@
 # myweather-app
+
 ## installations : 
 ```bash
 npm init
@@ -18,6 +19,8 @@ node server.js
 Open the browser on http://localhost:3000
 
 ## DEMO :
+
+https://user-images.githubusercontent.com/63208980/185089480-ae83c4cb-56dd-496e-9174-55523970c75a.mp4
 
 
 
