@@ -20,7 +20,7 @@ let weather ={
 		.catch(err => console.error(err));
 	},
 
-	// function that display weather data on the page
+	// function that displays weather data on the page
 
 	displayWeather : function(data){
 		const { name, country, localtime } = data.location;
@@ -48,7 +48,6 @@ function fade(element) {
         }
 		if (op <= 0.8){
         element.style.opacity = op;
-        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
         op += op * 0.1;
 		}
     },30);
